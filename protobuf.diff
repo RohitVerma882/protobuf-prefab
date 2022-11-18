@@ -1,0 +1,37 @@
+Submodule protobuf/native contains modified content
+diff --git a/protobuf/native/CMakeLists.txt b/protobuf/native/CMakeLists.txt
+index 04cb3303a..95882a293 100644
+--- a/protobuf/native/CMakeLists.txt
++++ b/protobuf/native/CMakeLists.txt
+@@ -298,7 +298,8 @@ endif (MSVC)
+ include_directories(
+   ${ZLIB_INCLUDE_DIRECTORIES}
+   ${protobuf_BINARY_DIR}
+-  ${protobuf_SOURCE_DIR}/src)
++  ${protobuf_SOURCE_DIR}/src
++  ${protobuf_SOURCE_DIR}/android)
+ 
+ if (protobuf_UNICODE)
+   add_definitions(-DUNICODE -D_UNICODE)
+diff --git a/protobuf/native/src/google/protobuf/stubs/common.cc b/protobuf/native/src/google/protobuf/stubs/common.cc
+index eb28061b0..28a81c686 100644
+--- a/protobuf/native/src/google/protobuf/stubs/common.cc
++++ b/protobuf/native/src/google/protobuf/stubs/common.cc
+@@ -47,7 +47,7 @@
+ #include <windows.h>
+ #define snprintf _snprintf    // see comment in strutil.cc
+ #endif
+-#if defined(__ANDROID__)
++#if 0
+ #include <android/log.h>
+ #endif
+ 
+@@ -123,7 +123,7 @@ std::string VersionString(int version) {
+ 
+ namespace internal {
+ 
+-#if defined(__ANDROID__)
++#if 0
+ inline void DefaultLogHandler(LogLevel level, const char* filename, int line,
+                               const std::string& message) {
+   if (level < GOOGLE_PROTOBUF_MIN_LOG_LEVEL) {

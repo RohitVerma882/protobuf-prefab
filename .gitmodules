@@ -1,0 +1,3 @@
+[submodule "protobuf/native"]
+	path = protobuf/native
+	url = https://android.googlesource.com/platform/external/protobuf
