@@ -50,6 +50,15 @@ android {
             headers "native/src"
         }
     }
+    
+    packagingOptions {
+        exclude("**/*.cc")
+        exclude("**/*.proto")
+        exclude("**/solaris/*")
+        exclude("**/*.map")
+        exclude("**/*.am")
+        exclude("**/*.md")
+    }
 }
 
 // NDK does not run strip on static libraries, do it ourselves
