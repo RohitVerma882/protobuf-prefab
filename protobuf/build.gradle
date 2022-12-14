@@ -90,9 +90,9 @@ def stripNativeRelease = task('stripNativeRelease').doLast {
             ignoreExitValue false
         }
         
-        if (abi == "arm64-v8a") {
-            def protocPath = Paths.get(project.buildDir.path, 'intermediates', 'cmake', 'release', 'obj', 'arm64-v8a')
-            def protocOut = Paths.get(project.buildDir.path, '..', '..', 'binarys', 'protoc-' + android.defaultConfig.versionName + '-aarch64')
+        if (abi == "arm64-v8a" || abi == "armeabi-v7a") {
+            def protocPath = Paths.get(project.buildDir.path, 'intermediates', 'cmake', 'release', 'obj', abi)
+            def protocOut = Paths.get(project.buildDir.path, '..', '..', 'binarys', 'protoc-' + android.defaultConfig.versionName + abi)
             def protoc = protocPath.resolve('protoc')
         
             exec {
