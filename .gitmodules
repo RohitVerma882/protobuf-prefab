@@ -1,3 +1,4 @@
 [submodule "protobuf/native"]
 	path = protobuf/native
 	url = https://android.googlesource.com/platform/external/protobuf
+	branch = platform-tools-33.0.3
